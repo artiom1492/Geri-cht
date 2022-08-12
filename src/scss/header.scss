@@ -51,67 +51,79 @@
 .header {
     color: #FFFFFF;
     height: 121px;
+    // .header__container
     &__container {
+        // .header__container_wide
         &_wide {
             display: flex;
         }
     }
+    // .header__column
+    &__column {
+        flex: 0 0 300px;
+        // .header__column_wide
+        &_wide {
+            flex: 1 1 auto;
+        }
+    }
+    // .header__logo
     &__logo {
-        margin-top: 32px;
+        // font-family: 'Cormorant Upright';
+        @extend %cuf;
         font-weight: 700;
         font-size: 44px;
+        margin-top: 31px;
         line-height: 130%;
         letter-spacing: 0.04em;
         text-transform: uppercase;
-        font-family: 'Cormorant Upright';
-        flex: 0 0 300px;
-        justify-content: flex-start;
     }
+    // .header__menu
     &__menu {
-        flex: 1 1 auto;
-        text-align: center;
+        margin: 46px 0;
     }
+    // .header__block
     &__block {
+        margin: 32px 0;
+        text-align: right;
         display: flex;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 175%;
-        /* identical to box height, or 28px */
-        letter-spacing: 0.05em;
-        text-transform: capitalize;
-        align-self: stretch;
-        flex: 0 0 300px;
+        gap: 50px;
+        position: relative;
     }
+    // .header__item
     &__item {
         position: relative;
         &:not(:last-child):before {
+            content: "";
             position: absolute;
+            top: -50%;
             right: -25px;
-            content: '';
-            display: block;
             width: 1px;
             height: 57px;
+            display: block;
             background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 0%, rgba(35, 90, 155, 0) 1%, rgba(255, 255, 255, 0.98) 49%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 77%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 97%, rgba(255, 255, 255, 0) 100%);
-            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         }
     }
+    // .header__login
+    &__login {}
+    // .header__booking
+    &__booking {}
 }
 
 .menu {
+    // .menu__icon
     &__icon {}
+    // .menu__body
     &__body {}
-    &__list {}
-    &__item {
-        gap: 46px 32px;
+    // .menu__list
+    &__list {
+        justify-content: center;
+        display: flex;
+        gap: 0 32px;
     }
-    &__link {
-        font-weight: 400;
-        line-height: 175%;
-        letter-spacing: 0.04em;
-        &:not(:last-child) {
-            // margin-right: 32px;
-        }
-    }
+    // .menu__item
+    &__item {}
+    // .menu__link
+    &__link {}
 }
 
 .icon-menu {}
