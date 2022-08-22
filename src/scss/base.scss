@@ -18,6 +18,16 @@
 // Стили для отзывчивых картинок (IBG)
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
+.main-pg {
+    position: fixed;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('@img/photo/Background-for-g.png') center/cover no-repeat;
+    z-index: -1;
+}
+
 [class*="-ibg"] {
     position: relative;
     img {
