@@ -1,3 +1,69 @@
 //====================================================================================================
+.mainpage {
+    &__slider {}
+}
+
+.main-slider {
+    @include adaptiveValue("padding-top", 213, 150);
+    @include adaptiveValue("padding-bottom", 70, 70);
+    background-color: $bckgColor;
+    &__container {
+        &_wide {
+            position: relative;
+        }
+    }
+    &__menu {}
+    &__scroll {}
+}
+
+.body-main-slider {
+    &__slider {}
+    &__wrapper {}
+    &__slide {}
+    &__controll {}
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+.slide-main-slider {
+    &__descr {}
+    &__text {}
+    &__button {}
+    &__image {}
+}
+
+.block-header {
+    &_left {}
+    &_big {}
+    &__label {}
+    &__title {}
+}
+
+.menu-main-slider {
+    position: absolute;
+    top: 0;
+    left: rem(15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    gap: rem(40);
+    &__link {
+        transform: rotate(-180deg);
+        writing-mode: vertical-lr;
+        font-size: rem(18);
+        line-height: 175%;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainYellowColor;
+            }
+        }
+    }
+}
 
 //====================================================================================================

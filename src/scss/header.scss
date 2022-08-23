@@ -49,17 +49,19 @@
 }
 
 .header {
-    padding: 32px 0px 0px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 10px 0px 10px 0px;
     color: $mainColor;
-    height: 121px;
-    @include adaptiveValue("padding-top", 32, 12, 1200, 768, 1);
-    @include adaptiveValue("padding-bottom", 32, 12, 1200, 768, 1);
-    @include adaptiveValue("height", 121, 80, 1330, 768, 1);
-    // .header__container
+    // height: 121px;
     &__container {
         // .header__container_wide
         &_wide {
             display: flex;
+            @include adaptiveValue("min-height", 121, 50, );
         }
     }
     // .header__column
@@ -129,10 +131,9 @@
     }
     // .header__item
     &__item {
-        transition: color 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                color: $hoverColor;
+                color: $mainYellowColor;
             }
         }
         font-weight: 600;
@@ -225,10 +226,9 @@
     &__link {
         line-height: 175%;
         letter-spacing: 0.04em;
-        transition: color 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                color: $hoverColor;
+                color: $mainYellowColor;
             }
         }
     }

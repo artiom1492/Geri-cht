@@ -18,14 +18,62 @@
 // Стили для отзывчивых картинок (IBG)
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
+.slide-main-slider {}
+
+.block-header {
+    @extend %cuf;
+    // text-align: center;
+    text-transform: capitalize;
+    justify-items: center;
+    display: grid;
+    gap: 8px;
+    font-weight: 700;
+    &__label {
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: 0.04em;
+        @include adaptiveValue("font-size", 23, 23);
+        display: grid;
+        gap: 8px;
+        flex-direction: column-reverse;
+        justify-items: center;
+        &::after {
+            // content:'';
+            @extend %ic;
+            content: "\e903";
+            color: $mainYellowColor;
+            font-size: em(9, 23);
+        }
+    }
+    &__title {
+        color: $mainYellowColor;
+        line-height: 130%;
+        @include adaptiveValue("font-size", 64, 64);
+        line-height: 130%;
+        /* or 83px */
+        letter-spacing: 0.03em;
+    }
+    &_big {
+        &__title {
+            @include adaptiveValue("font-size", 90, 90);
+        }
+    }
+    &_left {
+        .block-header__label {
+            justify-items: start;
+        }
+        justify-items: start;
+    }
+}
+
 .main-pg {
     position: fixed;
+    z-index: 1;
     top: -10%;
     left: 0;
     width: 100%;
     height: 120%;
-    background: url('@img/photo/Background-for-g.png') center/cover no-repeat;
-    z-index: -1;
+    background: url('@img/photo/Background-for-g.png') center / cover no-repeat;
 }
 
 [class*="-ibg"] {
