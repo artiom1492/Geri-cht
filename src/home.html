@@ -6,7 +6,7 @@
     <div class="wrapper">
         @@include('html/_header.htm',{})
         <main class="mainpage">
-            <section class="mainpage__slider main-slider">
+            <section data-fullscreen class="mainpage__slider main-slider">
                 <div class="main-slider__container main-slider__container_wide">
                     <div class="main-slider__container body-main-slider">
                         <div class="body-main-slider__slider swiper">
@@ -21,18 +21,18 @@
                                         <div class="slide-main-slider__text">Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus </div>
                                         <a href="#" class="slide-main-slider__button">Explore Menu</a>
                                     </div>
-                                    <div class="slide-main-slider__image"><img src="@img/photo/fish.jpg" alt="image fish"></div>
+                                    <div class="slide-main-slider__image-ibg"><img src="@img/photo/fish.jpg" alt="image fish"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="body-main-slider__controll"></div>
+                        <div class="body-main-slider__controll">Тут булеты</div>
 
                     </div>
                     <div class="main-slider__menu menu-main-slider">
-                        <a href="#" class="menu-main-slider__link">#Gericht</a>
+                        <a href="#" class="menu-main-slider__link menu-main-slider__link_current ">#Gericht</a>
                         <a href="#" class="menu-main-slider__link">#Bar</a>
                     </div>
-                    <div class="main-slider__scroll">Scroll</div>
+                    <button class="main-slider__scroll scroll">Scroll</button>
 
                 </div>
 
