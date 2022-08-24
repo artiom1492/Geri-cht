@@ -1,14 +1,23 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
-
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+    display: inline-flex;
+    padding: rem(8) rem(32);
+    @extend %cuf;
+    font-weight: 700;
+    background-color: $mainYellowColor;
+    line-height: 175%;
+    letter-spacing: 0.04em;
+    // width: 157px;
+    // height: 44px;
+    color: $bckgColor;
+    transition: background-color 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $mainHoverYellow;
+        }
+    }
+    &._fw {
+        width: 100%;
+    }
 }

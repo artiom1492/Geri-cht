@@ -23,9 +23,21 @@
 }
 
 .body-main-slider {
-    &__slider {}
-    &__wrapper {}
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    &__slider {
+        // height: 100%;
+        flex: 1 1 auto;
+    }
+    &__wrapper {
+        // flex: 1 1 auto;
+        height: 100%;
+    }
     &__slide {
+        // flex: 1 1 auto;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -46,7 +58,12 @@
 
 .slide-main-slider {
     &__descr {
-        @include adaptiveValue("padding-right", 34, 34);
+        @include adaptiveValue("padding-right", 44, 44);
+        align-self: center;
+        display: grid;
+        gap: 32px;
+        max-width: rem(497);
+        justify-items: start;
     }
     &__text {}
     &__button {}
