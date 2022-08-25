@@ -123,7 +123,7 @@ import * as flsForms from "./files/forms/forms.js";
 // ========================================================================================================================================================================================================================================================
 /*
 Настройка подключения плагина слайдера Swiper и новых слайдеров выполняется в файле js/files/sliders.js
-Документация по работе в шаблоне: https://template.fls.guru/template-docs/rabota-so-slajderom-swiper.html
+Документация по работе в шаблоне: https://ыtemplate.fls.guru/template-docs/rabota-so-slajderom-swiper.html
 Документация плагина: https://swiperjs.com/
 Сниппет(HTML): swiper
 */

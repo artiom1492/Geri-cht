@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -19,20 +19,20 @@ EffectFade, Lazy, Manipulation
 // Базовые стили
 import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
-import "../../scss/libs/swiper.scss";
+// import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
-import 'swiper/css';
+// import 'swiper/css';
 
 // Инициализация слайдеров
 function initSliders() {
     // Перечень слайдеров
     // Проверяем, есть ли слайдер на стронице
-    if (document.querySelector('.body-main-slider')) { // Указываем скласс нужного слайдера
+    if (document.querySelector('.body-main-slider__slider')) { // Указываем скласс нужного слайдера
         // Создаем слайдер
-        new Swiper('.body-main-slider', { // Указываем скласс нужного слайдера
+        new Swiper('.body-main-slider__slider', { // Указываем скласс нужного слайдера
             // Подключаем модули слайдера
             // для конкретного случая
-            modules: [Autoplay, Navigation, Pagination, EffectFade],
+            modules: [Navigation, Pagination, Autoplay, EffectFade],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -56,20 +56,20 @@ function initSliders() {
 
 
             // Пагинация
-
-            pagination: {
-                el: '.body-main-slider__controll',
-                clickable: true,
-            },
-
-
-            // Скроллбар
             /*
-            scrollbar: {
-            	el: '.swiper-scrollbar',
-            	draggable: true,
+            pagination: {
+            	el: '.swiper-pagination',
+            	clickable: true,
             },
             */
+
+            // Скроллбар
+
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+
 
             // Кнопки "влево/вправо"
             // navigation: {
