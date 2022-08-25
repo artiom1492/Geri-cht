@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Autoplay, Navigation, Pagination, EffectFade } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -19,9 +19,9 @@ EffectFade, Lazy, Manipulation
 // Базовые стили
 import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
-// import "../../scss/libs/swiper.scss";
+import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
-// import 'swiper/css';
+import 'swiper/css';
 
 // Инициализация слайдеров
 function initSliders() {
@@ -29,10 +29,10 @@ function initSliders() {
     // Проверяем, есть ли слайдер на стронице
     if (document.querySelector('.body-main-slider')) { // Указываем скласс нужного слайдера
         // Создаем слайдер
-        new Swiper('.swiper', { // Указываем скласс нужного слайдера
+        new Swiper('.body-main-slider', { // Указываем скласс нужного слайдера
             // Подключаем модули слайдера
             // для конкретного случая
-            modules: [Navigation],
+            modules: [Autoplay, Navigation, Pagination, EffectFade],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -46,22 +46,22 @@ function initSliders() {
             //preloadImages: false,
             //lazy: true,
 
-            /*
+
             // Эффекты
             effect: 'fade',
             autoplay: {
-            	delay: 3000,
-            	disableOnInteraction: false,
+                delay: 3000,
+                disableOnInteraction: false,
             },
-            */
+
 
             // Пагинация
-            /*
+
             pagination: {
-            	el: '.swiper-pagination',
-            	clickable: true,
+                el: '.body-main-slider__controll',
+                clickable: true,
             },
-            */
+
 
             // Скроллбар
             /*
@@ -72,10 +72,10 @@ function initSliders() {
             */
 
             // Кнопки "влево/вправо"
-            navigation: {
-                prevEl: '.swiper-button-prev',
-                nextEl: '.swiper-button-next',
-            },
+            // navigation: {
+            //     prevEl: '.swiper-button-prev',
+            //     nextEl: '.swiper-button-next',
+            // },
 
             // Брейкпоинты
             /*

@@ -4,8 +4,8 @@
 }
 
 .main-slider {
-    @include adaptiveValue("padding-top", 213, 150);
-    @include adaptiveValue("padding-bottom", 70, 70);
+    @include adaptiveValue("padding-top", 189, 126);
+    @include adaptiveValue("padding-bottom", 46, 46);
     background-color: $bckgColor;
     display: flex;
     &__container {
@@ -24,13 +24,13 @@
 
 .body-main-slider {
     height: 100%;
-    min-height: 300px;
     display: flex;
     flex-direction: column;
     &__slider {
         // height: 100%;
         flex: 1 1 auto;
         // align-items: center;
+        padding: 24px 0 24px 0;
     }
     &__wrapper {
         // flex: 1 1 auto;
@@ -39,8 +39,7 @@
     }
     &__slide {
         // flex: 1 1 auto;
-        // height: 100%;
-        min-height: 300px;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -70,7 +69,51 @@
     }
     &__text {}
     &__button {}
-    &__image {}
+    &__image-ibg {
+        max-height: 736px;
+        height: 100%;
+        align-self: center;
+        margin-right: percent(24, 650);
+        position: relative;
+        &::before,
+        &::after {
+            transition: transform 0.3s ease 0s;
+            content: '';
+            position: absolute;
+            width: percent(435, 619);
+            height: percent(435, 688);
+            background-color: $mainYellowColor;
+        }
+        &::before {
+            top: 0;
+            right: 0;
+            transform: translate(24px, -24px);
+        }
+        &::after {
+            bottom: 0;
+            left: 0;
+            transform: translate(-24px, 24px);
+            z-index: -1;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    transform: translate(28px, -28px);
+                    background-color: $mainHoverYellow;
+                }
+                &::after {
+                    transform: translate(-28px, 28px);
+                    background-color: $mainHoverYellow;
+                }
+                img {
+                    transform: scale(1.04)
+                }
+            }
+        }
+        img {
+            transition: transform 0.3s ease 0s;
+        }
+    }
 }
 
 .block-header {
