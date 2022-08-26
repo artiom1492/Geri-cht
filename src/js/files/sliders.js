@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Autoplay, EffectFade } from 'swiper';
+import Swiper, { Pagination, Autoplay, EffectFade, } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -18,7 +18,7 @@ EffectFade, Lazy, Manipulation
 // Стили Swiper
 // Базовые стили
 import "../../scss/base/swiper.scss";
-// Полный набор стилей из scss/libs/swiper.scss
+// Полный набор стилей из scss / libs / swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
 // import 'swiper/css';
@@ -27,12 +27,12 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
     // Перечень слайдеров
     // Проверяем, есть ли слайдер на стронице
-    if (document.querySelector('.body-main-slider__slider')) { // Указываем скласс нужного слайдера
+    if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
         // Создаем слайдер
-        new Swiper('.body-main-slider__slider', { // Указываем скласс нужного слайдера
+        new Swiper('.swiper', { // Указываем скласс нужного слайдера
             // Подключаем модули слайдера
             // для конкретного случая
-            modules: [Navigation, Pagination, Autoplay, EffectFade],
+            modules: [Pagination, Autoplay, EffectFade, ],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -41,34 +41,40 @@ function initSliders() {
             speed: 800,
 
             //touchRatio: 0,
-            //simulateTouch: false,
-            //loop: true,
+            //  simulateTouch: false,
+            loop: true,
+            // slidesPerView: 1,
             //preloadImages: false,
             //lazy: true,
 
 
             // Эффекты
             effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            // effect: 'flip',
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
+
             },
 
 
             // Пагинация
-            /*
+
             pagination: {
-            	el: '.swiper-pagination',
-            	clickable: true,
+                el: '.body-main-slider__controll',
+                clickable: true,
             },
-            */
+
 
             // Скроллбар
 
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                draggable: true,
-            },
+            // scrollbar: {
+            //     el: '.body-main-slider__controll',
+            //     draggable: true,
+            // },
 
 
             // Кнопки "влево/вправо"
