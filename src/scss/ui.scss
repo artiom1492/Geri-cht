@@ -34,7 +34,7 @@
     }
     &_big {
         .block-header__title {
-            @include adaptiveValue("font-size", 90, 90);
+            @include adaptiveValue("font-size", 90, 40);
         }
     }
     &_left {
@@ -67,12 +67,20 @@
     display: grid;
     justify-items: center;
     gap: 24px;
-    &::before {
-        content: '';
-        background: rgb(220, 202, 135);
-        background: linear-gradient(180deg, rgba(220, 202, 135, 1) 24%, rgba(220, 202, 135, 0.24) 100%);
-        width: 1px;
-        height: 61px;
+    @media (max-width: em(1445)) {
+        display: block;
+        &::before {
+            display: none;
+        }
+    }
+    @media (min-width: em(1445)) {
+        &::before {
+            content: '';
+            background: rgb(220, 202, 135);
+            background: linear-gradient(180deg, rgba(220, 202, 135, 1) 24%, rgba(220, 202, 135, 0.24) 100%);
+            width: 1px;
+            height: 61px;
+        }
     }
 }
 
