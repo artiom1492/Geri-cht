@@ -31,6 +31,7 @@
         line-height: 130%;
         /* or 83px */
         letter-spacing: 0.03em;
+        font-feature-settings: 'tnum' on, 'lnum' on;
     }
     &_big {
         .block-header__title {
@@ -53,7 +54,7 @@
     left: 0;
     width: 100%;
     height: 120%;
-    background: url('@img/photo/Background-for-g.png') center / cover no-repeat;
+    background: url('@img/photo/about/Background-for-g.png') center / cover no-repeat;
 }
 
 // Сколл кнопка

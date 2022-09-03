@@ -56,6 +56,7 @@
     z-index: 50;
     padding: 10px 0px 10px 0px;
     color: $mainColor;
+    background: #0C0B08;
     &._header-scroll {
         transform: translateY( -100%);
         position: fixed;
@@ -89,7 +90,7 @@
         }
         // .header__column_wide
         &_wide {
-            flex: 1 1 auto;
+            flex: 1 1 auto !important;
         }
         &_auth {
             display: flex;
@@ -104,7 +105,7 @@
             @media (min-width: $mobile) {
                 display: none;
             }
-            flex: 0 0 35px;
+            flex: 0 0 35px !important;
             margin-left: 15px;
         }
     }
@@ -123,7 +124,6 @@
         z-index: 2;
     }
     // .header__menu
-    &__menu {}
     // .header__block
     &__block {
         @media( max-width: 1100.8px) {
@@ -172,15 +172,10 @@
             font-size: rem(30);
         }
     }
-    // .header__login
-    &__login {}
-    // .header__booking
-    &__booking {}
 }
 
 .menu {
     // .menu__icon
-    &__icon {}
     // .menu__body
     &__body {
         @media (max-width: $mobile) {
@@ -232,7 +227,6 @@
         }
     }
     // .menu__item
-    &__item {}
     // .menu__link
     &__link {
         line-height: 175%;
@@ -244,5 +238,3 @@
         }
     }
 }
-
-.icon-menu {}

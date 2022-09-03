@@ -239,3 +239,67 @@
 }
 
 //====================================================================================================
+// About us start
+//====================================================================================================
+.mainpage {
+    // @include adaptiveValue("min-height", , );
+    &__about {}
+}
+
+.about-section {
+    @include adaptiveValue("padding-top", 120, 30);
+    @include adaptiveValue("padding-bottom", 136, 30);
+    &__container {
+        display: flex;
+    }
+    &__content {
+        display: grid;
+        gap: 32px;
+        align-content: start;
+        justify-items: start;
+        &:first-child {
+            justify-items: end;
+            text-align: right;
+            .about-section__title {
+                justify-items: end;
+                &::after {
+                    transform: rotate(-180deg)
+                }
+            }
+        }
+    }
+    &__title {
+        @extend %cuf;
+        font-weight: 600;
+        color: $mainYellowColor;
+        line-height: 130%;
+        @include adaptiveValue("font-size", 64, 64);
+        line-height: 130%;
+        /* or 83px */
+        letter-spacing: 0.03em;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        display: grid;
+        gap: 8px;
+        &:not(:last-child) {
+            margin-bottom: em(32, 49);
+        }
+        &::after {
+            // content:'';
+            @extend %ic;
+            content: "\e903";
+            color: $mainYellowColor;
+            font-size: em(9, 64);
+        }
+    }
+    &__text {}
+    &__knife {
+        display: flex;
+        flex: 0 0 255px;
+        justify-content: center;
+    }
+    &__button {}
+}
+
+//====================================================================================================
+// About us cancled
+//====================================================================================================
