@@ -5,7 +5,7 @@
     display: none;
     @media (max-width: $mobile) {
         display: block;
-        position: relative;
+        position: absolute;
         width: rem(35);
         height: rem(21);
         cursor: pointer;
@@ -49,7 +49,7 @@
 }
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -57,11 +57,23 @@
     padding: 10px 0px 10px 0px;
     color: $mainColor;
     // height: 121px;
+    &._header-scroll {
+        transform: translateY( -100%);
+        position: fixed;
+        background: rgba(0, 0, 0, .8);
+    }
+    &._header-show {
+        transform: translateY( 0%);
+        transition: transform 0.3s ease 0s;
+    }
     &__container {
         // .header__container_wide
         &_wide {
             display: flex;
             @include adaptiveValue("min-height", 121, 50, );
+            ._header-scroll & {
+                @include adaptiveValue("min-height", 80, 50, );
+            }
         }
     }
     // .header__column

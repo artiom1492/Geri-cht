@@ -3,8 +3,14 @@
     &__slider {}
 }
 
+@media (max-width: $tablet) {
+    .mainpage [data-fullscreen] {
+        min-height: 0;
+    }
+}
+
 .main-slider {
-    @include adaptiveValue("padding-top", 189, 126);
+    @include adaptiveValue("padding-top", 189, 76);
     @include adaptiveValue("padding-bottom", 70, 30);
     background-color: $bckgColor;
     display: flex;
@@ -28,30 +34,41 @@
             right: rem(15);
             bottom: 0;
         }
+        @media (max-width:$tablet) {
+            display: none;
+        }
     }
 }
 
 .body-main-slider {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    @media (min-width: $tablet) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     &__slider {
         flex: 1 1 auto;
     }
     &__wrapper {
         // flex: 1 1 auto;
-        height: 100%;
+        @media (min-width: $tablet) {
+            height: 100%;
+        }
         align-items: center;
     }
     &__slide {
-        padding: 48px 0;
+        padding: 48px 0 28px;
         @media (min-width: em(1445)) {
             padding: 24px 0;
         }
         // flex: 1 1 auto;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        // gap: 50px;
+        @media (min-width:$tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            // gap: 0;
+            display: grid;
+            height: 100%;
+        }
     }
     &__controll {
         display: flex;
@@ -61,7 +78,7 @@
         font-size: 20px;
         // margin-top: rem(15);
         @media (min-width: em(1445)) {
-            margin-top: rem(64);
+            padding-top: rem(64);
         }
         .swiper-pagination-bullet {
             @extend %cuf;
@@ -104,7 +121,11 @@
     }
 }
 
-.swiper {}
+.swiper {
+    @media (max-width: $tablet) {
+        overflow: visible !important;
+    }
+}
 
 .swiper-wrapper {}
 
@@ -112,21 +133,36 @@
 
 .slide-main-slider {
     &__descr {
-        @include adaptiveValue("padding-right", 44, 44);
         align-self: center;
         display: grid;
         gap: 32px;
-        max-width: rem(497);
         justify-items: start;
+        @media (max-width: $tablet) {
+            margin-bottom: rem(30);
+        }
+        @media (min-width: $tablet) {
+            max-width: rem(497);
+            @include adaptiveValue("padding-right", 44, 44);
+        }
+        @media (max-width: $mobileSmall) {
+            justify-items: stretch;
+        }
     }
     &__text {}
     &__button {}
     &__image-ibg {
-        max-height: 736px;
-        height: 100%;
         align-self: center;
-        margin-right: percent(24, 650);
         position: relative;
+        padding-bottom: percent(619, 688);
+        @media (min-width: $tablet) {
+            max-height: 736px;
+            height: 100%;
+            margin-right: percent(24, 650);
+        }
+        @media (max-width:$tablet) {
+            margin: 0px rem(math.div($containerPadding, -2));
+            display: block;
+        }
         &::before,
         &::after {
             transition: transform 0.3s ease 0s;
@@ -135,6 +171,9 @@
             width: percent(435, 619);
             height: percent(435, 688);
             background-color: $mainYellowColor;
+            @media (max-width: $tablet) {
+                display: none;
+            }
         }
         &::before {
             top: 0;
@@ -166,13 +205,6 @@
             transition: transform 0.3s ease 0s;
         }
     }
-}
-
-.block-header {
-    &_left {}
-    &_big {}
-    &__label {}
-    &__title {}
 }
 
 .menu-main-slider {

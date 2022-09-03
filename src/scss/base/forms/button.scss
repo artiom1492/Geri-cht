@@ -1,13 +1,13 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
 .button {
-    display: inline-flex;
     padding: rem(8) rem(32);
     @extend %cuf;
     font-weight: 700;
     background-color: $mainYellowColor;
     line-height: 175%;
     letter-spacing: 0.04em;
+    text-align: center;
     // width: 157px;
     // height: 44px;
     color: $bckgColor;
