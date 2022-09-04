@@ -47,8 +47,13 @@
 }
 
 // Глобальный фон для всей стр
-.main-pg {
-    position: fixed;
+[data-bg] {
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-item {
+    position: absolute;
     z-index: 1;
     top: -10%;
     left: 0;

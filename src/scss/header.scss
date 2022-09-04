@@ -10,6 +10,8 @@
         height: rem(21);
         cursor: pointer;
         z-index: 5;
+        top: 50%;
+        transform: translateY(-50%);
         span,
         &::before,
         &::after {
