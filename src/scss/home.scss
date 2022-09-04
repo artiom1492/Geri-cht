@@ -247,10 +247,29 @@
 }
 
 .about-section {
-    @include adaptiveValue("padding-top", 120, 30);
-    @include adaptiveValue("padding-bottom", 136, 30);
+    @include adaptiveValue("padding-top", 120, 40);
+    @include adaptiveValue("padding-bottom", 136, 40);
+    position: relative;
+    // min-height: 959px;
+    &::before {
+        content: 'G';
+        @include adaptiveValue("font-size", 650, 560);
+        font-weight: 700;
+        @extend %cuf;
+        color: #272727;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        z-index: 1;
+    }
     &__container {
-        display: flex;
+        position: relative;
+        z-index: 2;
+        @media (min-width: $mobile) {
+            display: flex;
+            align-items: center;
+        }
     }
     &__content {
         display: grid;
@@ -258,13 +277,27 @@
         align-content: start;
         justify-items: start;
         &:first-child {
-            justify-items: end;
-            text-align: right;
-            .about-section__title {
+            .about-section__title {}
+            @media (min-width: $mobile) {
                 justify-items: end;
-                &::after {
-                    transform: rotate(-180deg)
+                text-align: right;
+                .about-section__title {
+                    justify-items: end;
+                    &::after {
+                        transform: rotate(-180deg)
+                    }
                 }
+            }
+        }
+        @media (max-width:$mobile) {
+            align-items: center;
+            text-align: center;
+            justify-items: center;
+            .about-section__title {
+                justify-items: center;
+            }
+            &:not(:last-child) {
+                margin-bottom: rem(25);
             }
         }
     }
@@ -273,7 +306,7 @@
         font-weight: 600;
         color: $mainYellowColor;
         line-height: 130%;
-        @include adaptiveValue("font-size", 64, 64);
+        @include adaptiveValue("font-size", 64, 40, 1330, 768, 1);
         line-height: 130%;
         /* or 83px */
         letter-spacing: 0.03em;
@@ -291,11 +324,26 @@
             font-size: em(9, 64);
         }
     }
-    &__text {}
+    &__text {
+        @media (min-width: $mobile) {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+    }
     &__knife {
-        display: flex;
-        flex: 0 0 255px;
-        justify-content: center;
+        flex: 0 0 percent(255, 1330);
+        padding: 0px rem(15);
+        // @include adaptiveValue("flex",255px , );
+        // justify-content: center;
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+        @media (max-width:$mobile) {
+            display: none;
+        }
     }
     &__button {}
 }
