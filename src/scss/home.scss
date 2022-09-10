@@ -96,6 +96,9 @@
         @media (min-width: em(1445)) {
             padding-top: rem(64);
         }
+        @media (max-width:em(1445)) and ( min-width: em(768)) {
+            margin-top: rem(20);
+        }
         .swiper-pagination-bullet {
             @extend %cuf;
             font-weight: 600;

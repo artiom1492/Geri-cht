@@ -60,13 +60,15 @@
     color: $mainColor;
     background: #0C0B08;
     &._header-scroll {
-        transform: translateY( -100%);
+        // transform: translateY( -100%);
+        top: -100%;
         position: fixed;
         background: rgba(0, 0, 0, .8);
     }
     &._header-show {
-        transform: translateY( 0%);
-        transition: transform 0.3s ease 0s;
+        // transform: translateY( 0%);
+        top: 0%;
+        transition: top 0.3s ease 0s;
     }
     &__container {
         // .header__container_wide
@@ -206,6 +208,7 @@
             }
             .menu-open & {
                 left: 0%;
+                // height: 100vh;
                 &:before {
                     top: 0%;
                 }

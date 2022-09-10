@@ -60,11 +60,11 @@ function initSliders() {
                 crossFade: true
             },
             // effect: 'flip',
-            // autoplay: {
-            //     delay: 3000,
-            //     disableOnInteraction: false,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
 
-            // },
+            },
 
 
             // Пагинация
