@@ -418,10 +418,10 @@
         padding: 0px rem(32);
         @include adaptiveValue("padding-top",
         48,
-        48);
+        47);
         @include adaptiveValue("padding-bottom",
         48,
-        48);
+        47);
     }
     &__header {}
     &__form {}
@@ -438,10 +438,10 @@
     &__lines {
         @include adaptiveValue("padding-top",
         64,
-        48);
+        47);
         @include adaptiveValue("padding-bottom",
         64,
-        48);
+        47);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
