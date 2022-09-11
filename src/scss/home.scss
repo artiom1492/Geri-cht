@@ -7,10 +7,10 @@
             position: absolute;
             background: url("@img/photo/main-line.svg") 0 0 /100% no-repeat;
             top: 0;
-            right: 0;
-            width: 3132px;
+            right: 50%;
+            width: 1920px;
             height: 100%;
-            transform: translate(10%, 0);
+            transform: translate(50%, 0);
         }
     }
 }
@@ -415,6 +415,13 @@
         0,
         0,
         0.7);
+        padding: 0px rem(32);
+        @include adaptiveValue("padding-top",
+        48,
+        48);
+        @include adaptiveValue("padding-bottom",
+        48,
+        48);
     }
     &__header {}
     &__form {}
@@ -427,7 +434,18 @@
 }
 
 .form-book {
-    &__lines {}
+    text-align: center;
+    &__lines {
+        @include adaptiveValue("padding-top",
+        64,
+        48);
+        @include adaptiveValue("padding-bottom",
+        64,
+        48);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
     &__line {}
 }
 
