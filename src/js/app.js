@@ -76,7 +76,7 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formFieldsInit({ viewPass: false });
+flsForms.formFieldsInit({ viewPass: false });
 
 /* Oтправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
@@ -89,7 +89,11 @@ import * as flsForms from "./files/forms/forms.js";
 // flsForms.formRating();
 
 /* Модуль работы с select. */
-// import './libs/select.js'
+import './libs/select.js'
+
+// Модуль работы с календарем
+import './libs/datepicker-full.min.js'
+
 
 /* (В работе) Модуль работы с масками.*/
 /*
@@ -139,7 +143,7 @@ import "./files/sliders.js";
 Документация плагина: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
 Сниппет(HTML): 
 */
-// import './files/scroll/simplebar.js';
+import './files/scroll/simplebar.js';
 
 // Ленивая (отложенная) загрузка картинок
 // Документация по работе в шаблоне: https://template.fls.guru/template-docs/modul-lenivaya-podgruzka-lazy-loading.html
