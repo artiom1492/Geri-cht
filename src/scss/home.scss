@@ -581,3 +581,105 @@
     // ===================================================================================================
     //  Bar cancled
     // ===================================================================================================
+    // 
+    // ===================================================================================================
+    //  Special
+    // =====================================================================================================
+    .special {
+        @include adaptiveValue("padding-top",
+        152,
+        40);
+        @include adaptiveValue("padding-bottom",
+        152,
+        40);
+        &__container {}
+        &__header {}
+        &__body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        &__image {
+            img {
+                max-width: 100%
+            }
+        }
+    }
+    
+    .block-header {
+        &__label {}
+        &__title {}
+    }
+    
+    .body-special {
+        &__title {
+            @extend %cuf;
+            font-weight: 600;
+            font-size: 45px;
+            line-height: 130%;
+            text-align: center;
+            letter-spacing: 0.04em;
+            text-transform: capitalize;
+            font-feature-settings: 'tnum' on, 'lnum' on;
+            color: #FFFFFF;
+        }
+        &__menu {}
+    }
+    
+    .special-menu {
+        @include adaptiveValue("margin-top",
+        48,
+        18);
+        display: grid;
+        grid-template-columns: 225px 119px 37px;
+        row-gap: 8px;
+        column-gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        &__header {
+            // width: 225px;
+            @extend %cuf;
+            font-weight: 700;
+            @include adaptiveValue("font-size",
+            23,
+            23);
+            line-height: 130%;
+            letter-spacing: 0.04em;
+            text-transform: capitalize;
+            font-feature-settings: 'tnum' on, 'lnum' on;
+            color: $mainYellowColor;
+        }
+        &__decor {
+            width: 119px;
+            height: 1px;
+            background: #FAFAFA;
+        }
+        &__price {
+            font-weight: 700;
+            @include adaptiveValue("font-size",
+            23,
+            23);
+            line-height: 130%;
+            text-align: right;
+            letter-spacing: 0.04em;
+            text-transform: capitalize;
+            font-feature-settings: 'tnum' on, 'lnum' on;
+        }
+        &__descr {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 175%;
+            // text-align: left;
+            letter-spacing: 0.04em;
+            color: $mainTextColor;
+        }
+    }
+    
+    // ===================================================================================================
+    //  special cancled
+    // ===================================================================================================
+    // 
+    // ===================================================================================================
+    //  Special
+    // =====================================================================================================
