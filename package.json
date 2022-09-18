@@ -70,6 +70,7 @@
         "webpack-stream": "latest"
     },
     "dependencies": {
+        "js-datepicker": "^5.18.0",
         "simplebar": "latest"
     }
 }

@@ -27,7 +27,7 @@
     &__title {
         color: $mainYellowColor;
         line-height: 130%;
-        @include adaptiveValue("font-size", 64, 64);
+        @include adaptiveValue("font-size", 64, 32);
         line-height: 130%;
         /* or 83px */
         letter-spacing: 0.03em;
@@ -43,6 +43,29 @@
             justify-items: start;
         }
         justify-items: start;
+    }
+}
+
+// Декор 
+[data-decor] {
+    @media (min-width: $pc) {
+        &::before {
+            content: '';
+            z-index: 2;
+            background: url('@img/photo/main-decor.svg') 0 0/100% no-repeat;
+            position: absolute;
+            width: 146px;
+            height: 146px;
+            animation: rotate 25s infinite linear;
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
     }
 }
 

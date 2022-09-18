@@ -68,6 +68,10 @@ a:hover {
 
 ul li {
     list-style: none;
+    &::before,
+    &::after {
+        list-style: none;
+    }
 }
 
 img {
