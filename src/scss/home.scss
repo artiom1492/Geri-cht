@@ -518,6 +518,7 @@
     //  Bar 
     // =====================================================================================================
     .menu-block {
+        overflow: hidden;
         position: relative;
         @include adaptiveValue("padding-top",
         262,
@@ -526,12 +527,20 @@
         264,
         40);
         &__container {
-            &_wide {}
+            &_wide {
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: -260px;
+                }
+            }
         }
         &__items {}
         &__list {
             display: grid;
-            gap: 64px;
+            @include adaptiveValue("gap",
+            64,
+            24);
         }
         &__item {
             @extend %cuf;
@@ -543,6 +552,9 @@
             letter-spacing: 0.03em;
             text-transform: capitalize;
             font-feature-settings: 'tnum' on, 'lnum' on;
+            @media (max-width: $tablet) {
+                text-align: center;
+            }
         }
         &__link {
             &_active {
